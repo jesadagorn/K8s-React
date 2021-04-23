@@ -37,30 +37,6 @@ class App extends Component {
       datas[index].LastName = LastName;
     }
 
-    // const mysql = require('mysql');
-
-    // const condb = mysql.createConnection({
-    //   host: "db",
-    //   user: "user",
-    //   password: "test",
-    //   database: 'myDb'
-    // });
-
-    // condb.connect(function(err) {
-    //   console.log("sads");
-    //   if (err) throw err;
-    //   let sqlInsert = "INSERT INTO * FROM register ('FirstName','LastName') VALUES (" + FirstName + "," + LastName + ")" 
-    //   con.query(sqlInsert, function (err, result) {
-    //     if (err) throw err;
-    //     console.log(result);
-    //   });
-    // });
-
-    // app.post("/api/insert",(req,res) => {
-    //     const sqlInsert = "INSERT INTO register (FirstName,LastName) VALUES (,)"
-    //     db.query(sqlInsert, [])
-    // });
-
     this.setState({
       datas: datas
     });

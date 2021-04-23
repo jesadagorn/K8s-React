@@ -1,7 +1,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-CREATE TABLE dashboard (
+CREATE TABLE dashborad (
     id INT(100) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(50),
     Score VARCHAR(50)

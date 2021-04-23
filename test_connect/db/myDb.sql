@@ -1,8 +1,8 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-CREATE TABLE register (
+CREATE TABLE dashborad (
     id INT(100) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    FirstName VARCHAR(50),
-    LastName VARCHAR(50)
+    Name VARCHAR(50),
+    Score VARCHAR(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

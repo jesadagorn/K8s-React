@@ -2,17 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './css/Show.css';
-// import App from './App';
 import './css/Pacss.css';
 import reportWebVitals from './reportWebVitals';
+// import { localstorage, sessionstorage } from 'modernizr';
+import App from './App';
 import Show from './component/Show';
-import Pacman from './component/Pacman';
-
+// import Pacman from './component/Pacman';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Show /> */}
     {/* < Pacman /> */}
+    {/* <MyComponent/> */}
+    {/* <App/> */}
   
   </React.StrictMode>,
   document.getElementById('root')

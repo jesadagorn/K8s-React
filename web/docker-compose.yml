@@ -1,46 +1,45 @@
-version: "3"
+version: "2"
 services:
-  ProjectDocker:
-    image: docker-react
-    build: .
-    container_name: DBM
-    ports:
-      - "3000:3000"
-    restart: always
-    volumes:
-      - "${PWD}:/usr/src/app"
-      - "/usr/src/app/node_modules"
-    links:
-      - db
-    networks:
-      - default
+    web:
+        build: .
+        container_name: react
+        ports:
+            - "81:5553"
+        restart: always
 
-  db:
-    image: mysql:5.7.13
-    ports: 
-        - "3306:3306"
-    environment:
-        MYSQL_DATABASE: myDb
-        MYSQL_USER: user
-        MYSQL_PASSWORD: test
-        MYSQL_ROOT_PASSWORD: test
-    volumes:
-        - ./db:/docker-entrypoint-initdb.d
-        - ./data:/var/lib/mysql
-    networks:
-        - default
-        
-  phpmyadmin:
-      image: phpmyadmin/phpmyadmin
-      links: 
-          - db:db
-      ports:
-          - 8000:80
-      environment:
-          MYSQL_USER: user
-          MYSQL_PASSWORD: test
-          MYSQL_ROOT_PASSWORD: test
-          
+        volumes:
+            - "${PWD}:/usr/src/app"
+            - /usr/src/app/node_modules
+        links: 
+            - db
+        networks: 
+            - default
+
+    db:
+        image: mysql:5.7.13
+        ports: 
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: myDb
+            MYSQL_USER: user
+            MYSQL_PASSWORD: test
+            MYSQL_ROOT_PASSWORD: test
+        volumes:
+            - ./db:/docker-entrypoint-initdb.d
+            - ./data:/var/lib/mysql
+        networks:
+            - default
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - db:db
+        ports:
+            - 8000:80
+        environment:
+            MYSQL_USER: user
+            MYSQL_PASSWORD: test
+            MYSQL_ROOT_PASSWORD: test
+
 volumes:
-  data:
-  db:
+    db:
