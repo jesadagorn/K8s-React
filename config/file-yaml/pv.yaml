@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-db-vol
+  labels:
+    type: dblocal
+spec:
+  storageClassName: dbmanual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/dbdata"
+

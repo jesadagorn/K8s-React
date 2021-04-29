@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: pv-db-claim
+spec:
+    storageClassName: dbmanual
+    accessModes:
+        - ReadWriteOnce
+    resources:
+        requests:
+            storage: 5Gi
+

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-pacman-deployments
+spec:
+  selector:
+    matchLabels:
+      run: web-pacman-deployments
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: web-pacman-deployments
+    spec:
+      containers:
+      - name: web-pacman-deployments
+        image: uinotv/pacman-react-k8s:0.0.6
+        ports:
+        - containerPort: 80
+

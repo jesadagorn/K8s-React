@@ -7,10 +7,10 @@ const server = app.listen(port);
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-    host: "10.108.208.203",
+    host: "10.97.174.16",
     user: "dbwww",
     password: "sm@rt",
-    database: "smart_dev"
+    database: "db"
   });
   
 app.use(express.json({ limit: '10mb' }))

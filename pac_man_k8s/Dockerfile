@@ -24,3 +24,5 @@ RUN npm build
 
 # start app
 CMD ["npm", "start"]
+
+#docker image build --tag uinotv/pacman-react-k8s:0.0.7 .
